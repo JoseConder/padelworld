@@ -1,0 +1,41 @@
+// Define el proveedor de la base de datos (MySQL)
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Genera el cliente Prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Define el modelo para Usuario
+model Usuario {
+  id          Int      @id @default(autoincrement())
+  nombre      String
+  pwd  String
+  tipoDeUsuario String
+  tipoDeCuenta String
+  reservas    Reserva[]
+}
+
+// Define el modelo para Reserva
+model Reserva {
+  id          Int      @id @default(autoincrement())
+  fecha       DateTime @default(now())
+  hora        String
+  duracion    Int
+  usuario     Usuario  @relation(fields: [idUsuario], references: [id])
+  idUsuario   Int
+  cancha      Cancha   @relation(fields: [idCancha], references: [id])
+  idCancha    Int
+}
+
+// Define el modelo para Cancha
+model Cancha {
+  id           Int      @id @default(autoincrement())
+  numero       Int
+  estado       String
+  localizacion String
+  reservas     Reserva[]
+}
