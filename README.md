@@ -46,3 +46,7 @@ Pueden usar los siguientes placeholders para probar la funcionalidad:
   "idCancha": 1
 }
 ```
+### Otros
+para las demas partes del CRUD es importante recordar el uso de get para pedir todos los datos
+tambien el get se usa de forma especifica para obtener un dato especifico con /:id, por ejemplo /usuario/1234
+el put y el delete funcionan de la misma forma, es necesario usar el id especifico.
