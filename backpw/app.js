@@ -6,6 +6,8 @@ var logger = require('morgan');
 const { PrismaClient } = require('@prisma/client');
 var indexRouter = require('./routes/index');
 const canchasRoutes = require('./routes/canchas');
+const reservasRoutes = require('./routes/reservas');
+const usuariosRoutes = require('./routes/usuarios');
 
 var app = express();
 const prima = new PrismaClient();
@@ -21,6 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/canchas', canchasRoutes);
+app.use('/reservas', reservasRoutes);
+app.use('/usuarios', usuariosRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
