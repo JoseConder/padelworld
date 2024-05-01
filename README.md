@@ -4,7 +4,11 @@ Hola, si quieren probar los cambios recientes necesitan tener el **MySQL** y cam
 
 ## Correr el servidor
 
-Para correr el servidor es necesario estar dentro de la carpeta del backend y usar `npm start`. Automáticamente la consola les dice el puerto activo.
+Para correr el servidor es necesario estar dentro de la carpeta del backend y usar:
+```cmd
+`npm start` 
+```
+Automáticamente la consola les dice el puerto activo.
 
 ## Probar los CRUD
 
