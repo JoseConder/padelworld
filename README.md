@@ -24,14 +24,12 @@ Pueden usar los siguientes placeholders para probar la funcionalidad:
   "tipoDeCuenta": "tipo_de_cuenta"
 }
 ### Crear canchas
-```json
 {
   "numero": 1,
   "estado": "Disponible",
   "localizacion": "Calle Principal"
 }
 ### crear reservas
-```json
 {
   "hora": "09:00",
   "duracion": 60,
