@@ -1,3 +1,6 @@
+
+este es el readme de login2
+
 # Instrucciones para probar los cambios recientes
 
 Hola, si quieren probar los cambios recientes necesitan tener el **MySQL** y cambiar los datos para la conexión específica de su base de datos local.
