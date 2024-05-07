@@ -1,7 +1,26 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import { View, Text, TextInput, Alert, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
-export default function Login() {
+import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
+import appFirebase from '../credenciales';
+const auth = getAuth(appFirebase);
+
+export default function Login(props) {
+
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    
+    const sesion = async () => {
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            Alert.alert('Sesion iniciada con exito')
+            props.navigation.navigate('Home')
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return(
         <View style={styles.padre}>
             <View>
@@ -11,15 +30,17 @@ export default function Login() {
             <View style={styles.tarjeta}>
 
                 <View style={styles.cajaTexto}>
-                    <TextInput placeholder="Correo Electronico" style={{paddingHorizontal: 15}}/>
+                    <TextInput placeholder="Correo Electronico" style={{paddingHorizontal: 15}}
+                    onChangeText={(texto) => setEmail(texto)}/>
                 </View>
 
                 <View style={styles.cajaTexto}>
-                    <TextInput placeholder="Contraseña" style={{paddingHorizontal: 15}}/>
+                    <TextInput placeholder="Contraseña" style={{paddingHorizontal: 15}} secureTextEntry = {true}
+                    onChangeText={(texto) => setPassword(texto)}/>
                 </View>
 
                 <View style={styles.padreBoton}>
-                    <TouchableOpacity style={styles.cajaBoton}>
+                    <TouchableOpacity style={styles.cajaBoton} onPress={sesion}>
                         <Text style= {styles.textoBoton}>Iniciar Sesion</Text>
                     </TouchableOpacity>
                 </View>

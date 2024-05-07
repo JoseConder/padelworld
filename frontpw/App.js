@@ -8,7 +8,7 @@ import Login from './screens/Login';
 import Home from './screens/Home';
 
 export default function App() {
-    
+
   const Stack = createStackNavigator(); // Corrected function name
 
   function MyStack() {
