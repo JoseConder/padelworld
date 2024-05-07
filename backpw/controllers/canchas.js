@@ -38,9 +38,7 @@ async function obtenerCancha(req, res) {
 
 async function obtenerTodasLasCanchas(req, res) {
   try {
-    const canchas = await prisma.cancha.findMany({
-      include: { reservas: true } 
-    });
+    const canchas = await prisma.cancha.findMany();
     res.json(canchas);
   } catch (error) {
     console.error('Error al obtener todas las canchas:', error);

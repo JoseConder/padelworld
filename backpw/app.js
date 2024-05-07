@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 const canchasRoutes = require('./routes/canchas');
 const reservasRoutes = require('./routes/reservas');
 const usuariosRoutes = require('./routes/usuarios');
+const calendariosRoutes = require('./routes/calendarios');
 
 var app = express();
 const prima = new PrismaClient();
@@ -25,6 +26,7 @@ app.use('/', indexRouter);
 app.use('/canchas', canchasRoutes);
 app.use('/reservas', reservasRoutes);
 app.use('/usuarios', usuariosRoutes);
+app.use('/calendarios', calendariosRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

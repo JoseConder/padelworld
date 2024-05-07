@@ -23,8 +23,7 @@ async function obtenerUsuarioPorId(req, res) {
     const usuarioId = parseInt(req.params.id);
     try {
       const usuario = await prisma.usuario.findUnique({
-        where: { id: usuarioId },
-        include: { reservas: true }
+        where: { id: usuarioId }
       });
       res.json(usuario);
     } catch (error) {
@@ -35,9 +34,7 @@ async function obtenerUsuarioPorId(req, res) {
 
 async function obtenerTodasLosUsuarios(req, res) {
     try {
-      const usuarios = await prisma.usuario.findMany({
-        include: { reservas: true }
-      });
+      const usuarios = await prisma.usuario.findMany();
       res.json(usuarios);
     } catch (error) {
       console.error('Error al obtener todos los usuarios:', error);
