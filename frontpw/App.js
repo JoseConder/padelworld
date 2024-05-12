@@ -4,9 +4,8 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'; // Corrected import
 
-import Login from './screens/Login';
+import Hola from './screens/Hola';
 import Home from './screens/Home';
-
 export default function App() {
 
   const Stack = createStackNavigator(); // Corrected function name
@@ -14,7 +13,7 @@ export default function App() {
   function MyStack() {
       return(
           <Stack.Navigator>
-              <Stack.Screen name="Login" component={Login} 
+              <Stack.Screen name="Hola" component={Hola} 
               options ={{headerShown: false}}/>
               <Stack.Screen name="Home" component={Home} 
               options ={{headerShown: false}}/>
