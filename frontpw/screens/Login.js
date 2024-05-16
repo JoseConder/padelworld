@@ -76,12 +76,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#F3F3F3',
     padding: 16,
     flex: 1,
-    paddingTop: 70,
+    paddingTop: 35,
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginRight: 20,
   },
   welcomeText: {
     fontSize: 35,
