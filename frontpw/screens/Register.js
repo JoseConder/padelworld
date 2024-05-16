@@ -1,26 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, Alert, StyleSheet } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import appFirebase from '../credenciales';
 
-const auth = getAuth(appFirebase);
 
 export default function LoginScreen(props) {
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const sesion = async () => {
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      Alert.alert('Sesion iniciada con exito');
-      props.navigation.navigate('Home');
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -28,42 +11,43 @@ export default function LoginScreen(props) {
         <Image source={require('../assets/PadelOscuro.png')} style={styles.logo} />
       </View>
       <View style={styles.subHeader}>
-        <Text style={styles.subHeaderText}>Ingresa tus datos para iniciar sesión</Text>
-        <TouchableOpacity onPress={() => props.navigation.navigate('Registro')} style={styles.registerLink}>
-          <Text style={styles.registerText}>¿Aún no tienes cuenta?<Text style={styles.registerHighlight}> Regístrate aquí</Text></Text>
+        <Text style={styles.subHeaderText}>Crea tu cuenta para comenzar a reservar</Text>
+        <TouchableOpacity onPress={() => props.navigation.navigate('Login')} style={styles.registerLink}>
+          <Text style={styles.registerText}>¿Ya tienes cuenta?<Text style={styles.registerHighlight}> Inicia sesion aquí</Text></Text>
         </TouchableOpacity>
       </View>
       <View style={styles.inputContainer}>
-        <Text style={styles.label}>Correo electrónico</Text>
+        <Text style={styles.label}>Nombre</Text>
         <TextInput 
           style={styles.input} 
-          onChangeText={(texto) => setEmail(texto)}
-          value={email}
+        />
+        <Text style={styles.label}>Apellidos</Text>
+        <TextInput 
+          style={styles.input} 
+        />
+        <Text style={styles.label}>Correo</Text>
+        <TextInput 
+          style={styles.input} 
         />
         <Text style={styles.label}>Contraseña</Text>
         <TextInput 
-          style={styles.input} 
+          style={styles.input}
           secureTextEntry={true} 
-          onChangeText={(texto) => setPassword(texto)}
-          value={password}
         />
-        <TouchableOpacity onPress={() => console.log("¿Olvidaste tu contraseña?")} style={styles.forgotPassword}>
-          <Text style={styles.forgotPasswordText}>¿Olvidaste tu contraseña?</Text>
-        </TouchableOpacity>
       </View>
-      <TouchableOpacity onPress={sesion} style={styles.loginButton}>
-        <Text style={styles.loginButtonText}>Iniciar sesión</Text>
+      <TouchableOpacity onPress={() => console.log("Registrarse")} style={styles.registerButton}>
+        <Text style={styles.registerButtonText}>Crear cuenta</Text>
       </TouchableOpacity>
       <View style={styles.dividerContainer}>
         <View style={styles.divider} />
-        <Text style={styles.dividerText}>o inicia sesión con:</Text>
+        <Text style={styles.dividerText}>o Registrate con:</Text>
         <View style={styles.divider} />
       </View>
       <View style={styles.socialLoginContainer}>
-        <TouchableOpacity onPress={() => console.log("Iniciar sesión con Google")}>
+        <TouchableOpacity onPress={() => console.log("Registrarse con Google")}>
           <FontAwesome name="google" size={65} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => console.log("Iniciar sesión con Facebook")}>
+        <TouchableOpacity onPress={() => console.log("Registrarse con Facebook")}>
           <FontAwesome name="facebook" size={65} />
         </TouchableOpacity>
       </View>
@@ -120,7 +104,7 @@ const styles = StyleSheet.create({
   },
   input: {
     marginTop: 4,
-    marginBottom: 30,
+    marginBottom: 10,
     padding: 8,
     borderWidth: 1,
     borderColor: '#dadada',
@@ -128,15 +112,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: 50,
   },
-  forgotPassword: {
-    marginTop: 8,
-  },
-  forgotPasswordText: {
-    color: 'black',
-    fontSize: 14,
-    fontWeight: 'bold',
-  },
-  loginButton: {
+  registerButton: {
     backgroundColor: '#d2de33',
     padding: 12,
     borderRadius: 4,
@@ -145,7 +121,7 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: 'center',
   },
-  loginButtonText: {
+  registerButtonText: {
     color: 'black',
     textAlign: 'center',
     fontSize: 16,
@@ -155,7 +131,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 16,
-    paddingTop: 25,
+    paddingTop: 15,
   },
   divider: {
     backgroundColor: 'gray',
@@ -169,7 +145,7 @@ const styles = StyleSheet.create({
   socialLoginContainer: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    paddingTop: 35,
+    paddingTop: 15,
   },
 });
 
