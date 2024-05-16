@@ -1,0 +1,96 @@
+/* fonts */
+export const FontFamily = {
+  poppinsMedium: "Poppins-Medium",
+  poppinsRegular: "Poppins-Regular",
+  headingHeading03: "Roboto-Medium",
+  poppinsBold: "Poppins-Bold",
+  p: "Roboto-Regular",
+  openSansSemiBold: "OpenSans-SemiBold",
+  poppinsExtraLight: "Poppins-ExtraLight",
+  poppinsSemiBold: "Poppins-SemiBold",
+  interMedium: "Inter-Medium",
+  interExtraBold: "Inter-ExtraBold",
+  latoRegular: "Lato-Regular",
+  sourceSansPro: "Source Sans Pro",
+  interRegular: "Inter-Regular",
+  poppinsLight: "Poppins-Light",
+  interBold: "Inter-Bold",
+  interSemiBold: "Inter-SemiBold",
+  latoBold: "Lato-Bold",
+};
+/* font sizes */
+export const FontSize = {
+  size_9xl: 28,
+  p_size: 16,
+  size_mid: 17,
+  size_lg: 18,
+  h4_size: 21,
+  size_3xl: 22,
+  size_smi: 13,
+  headingHeading03_size: 14,
+  size_mini: 15,
+  size_xl: 20,
+  size_3xs: 10,
+  size_11xl: 30,
+};
+/* Colors */
+export const Color = {
+  colorWhitesmoke_100: "#f5f5f5",
+  colorWhitesmoke_200: "#f3f3f3",
+  colorWhitesmoke_300: "rgba(249, 249, 249, 0.94)",
+  colorLightgray_100: "#ced4da",
+  colorLightgray_200: "#cfcfcf",
+  colorBlack: "#000",
+  colorGray_100: "#8b8b8b",
+  colorGray_200: "#332941",
+  colorGray_300: "#070707",
+  colorGray_400: "rgba(0, 0, 0, 0.08)",
+  colorGray_500: "rgba(0, 0, 0, 0)",
+  colorYellowgreen_100: "#d2de33",
+  colorYellowgreen_200: "rgba(210, 222, 51, 0.5)",
+  textTextOnColor: "#fff",
+  monoGray2: "#e1e1e1",
+  gray5: "#e0e0e0",
+  colorDarkslateblue_100: "#3b3486",
+  colorDarkslateblue_200: "rgba(59, 52, 134, 0)",
+  colorDarkslateblue_300: "rgba(59, 52, 134, 0.26)",
+  supportSupportSuccess: "#4ac000",
+  colorLightcoral: "#f58383",
+  colorPalegreen: "#83f595",
+  supportSupportDanger: "#e01a1a",
+  colorDarkslategray_100: "#454545",
+  gray1: "#333",
+  colorDarkslategray_200: "rgba(60, 60, 60, 0.5)",
+  monoGray3: "#b5b5b5",
+  primaryPink: "#e85b81",
+};
+/* Style Variables */
+export const StyleVariable = {
+  spacing8: 8,
+  spacing12: 12,
+  borderRadius04: 4,
+};
+/* Paddings */
+export const Padding = {
+  p_41xl: 60,
+  p_mini: 15,
+  p_3xs: 10,
+  p_xs: 12,
+  p_5xs: 8,
+  p_base: 16,
+};
+/* border radiuses */
+export const Border = {
+  br_21xl: 40,
+  br_5xs: 8,
+  br_10xs_5: 3,
+  br_8xs_3: 4,
+  br_12xs: 1,
+  br_8xs: 5,
+  br_7xs: 6,
+  br_9xs: 4,
+  br_61xl: 80,
+  br_base: 16,
+  br_81xl: 100,
+  br_xs: 12,
+};
