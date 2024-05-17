@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack'; // Corrected imp
 import Login from './screens/Login';
 import Home from './screens/Home';
 import Register from './screens/Register';
+import Menu from './screens/Menu';
 export default function App() {
 
   const Stack = createStackNavigator(); // Corrected function name
@@ -20,6 +21,8 @@ export default function App() {
               <Stack.Screen name="Home" component={Home} 
               options ={{headerShown: false}}/>
               <Stack.Screen name="Register" component={Register}
+              options ={{headerShown: false}}/>
+              <Stack.Screen name="Menu" component={Menu}
               options ={{headerShown: false}}/>
           </Stack.Navigator>
       );
