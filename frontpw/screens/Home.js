@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text, Image, Pressable, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { Color, FontSize, FontFamily, Border, Padding } from "../GlobalStyles";
+
 
 export default function HomeScreen({ navigation }) {
     return (
@@ -7,16 +9,20 @@ export default function HomeScreen({ navigation }) {
             {/* Barra de Padel World */}
             <View style={styles.padelWorldBar}>
                 <Text style={styles.padelWorldText}>Padelworld</Text>
-                <Image
-                    style={styles.userIcon}
-                    source={require("../assets/usercircle.png")}
-                />
+
+                <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
+                    <Image
+                        style={styles.userIcon}
+                        source={require("../assets/usercircle.png")}
+                    />
+                </TouchableOpacity>
             </View>
+
 
             {/* Contenido principal en ScrollView */}
             <ScrollView contentContainerStyle={styles.scrollContent}>
                 {/* Contenido debajo de la barra de Padel World */}
-                <Pressable style={styles.pressableContainer}>
+                <TouchableOpacity   onPress={() => navigation.navigate('Notifications')} style={styles.pressableContainer}>
                     <View style={styles.rectangleView}>
                         <View style={styles.headerContainer}>
                             <Image
@@ -33,7 +39,8 @@ export default function HomeScreen({ navigation }) {
                             <Text style={styles.notifications}>4 notificaciones</Text>
                         </View>
                     </View>
-                </Pressable>
+                </TouchableOpacity>
+
 
                 {/* Contenido de las reservas */}
                 <Pressable style={styles.pressableContainer}>
@@ -46,13 +53,14 @@ export default function HomeScreen({ navigation }) {
                         </View>
                         <View style={styles.textButtonContainer}>
                             <Text style={styles.reservationText}>Actualmente no hay canchas reservadas</Text>
-                            <Pressable style={styles.searchButton}>
+                            <TouchableOpacity  onPress={() => navigation.navigate('Courts')} style={styles.searchButton}>
                                 <Text style={styles.searchButtonText}>Buscar canchas</Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </Pressable>
             </ScrollView>
+
 
             {/* Barra de navegación inferior */}
             <View style={styles.bottomBar}>
@@ -73,6 +81,7 @@ export default function HomeScreen({ navigation }) {
     );
 }
 
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -80,12 +89,13 @@ const styles = StyleSheet.create({
     },
     padelWorldBar: {
         height: 94,
-        backgroundColor: '#D2DE33',
+        backgroundColor: Color.colorYellowgreen_200,
         paddingHorizontal: 20,
         flexDirection: 'row',
         alignItems: 'flex-end',
         justifyContent: 'space-between',
-        paddingBottom: 10,
+        paddingBottom: 5,
+
 
     },
     padelWorldText: {
@@ -93,10 +103,12 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         textAlign: 'left',
+        fontFamily: FontFamily.poppinsMedium
     },
     userIcon: {
         width: 40,
         height: 40,
+      
     },
     scrollContent: {
         paddingHorizontal: 20,
@@ -122,7 +134,7 @@ const styles = StyleSheet.create({
       borderBottomWidth: 1,
       borderBottomColor: '#CFCFCF',
   },
-  
+ 
     headerContainer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -136,6 +148,8 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         color: '#000',
+        fontFamily: FontFamily.poppinsMedium,
+        fontSize: FontSize.size_9xl
     },
     notificationContainer: {
         flexDirection: 'row',
@@ -151,7 +165,8 @@ const styles = StyleSheet.create({
     notifications: {
         fontSize: 16,
         color: '#000',
-        
+        fontFamily: FontFamily.poppinsRegular
+       
     },
     reservationIcon: {
         width: 40,
@@ -161,6 +176,8 @@ const styles = StyleSheet.create({
     reservationText: {
         fontSize: 16,
         color: '#000',
+        fontFamily: FontFamily.poppinsRegular,
+        
     },
     searchButton: {
         backgroundColor: '#D2DE33',
@@ -176,9 +193,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#000',
         textAlign: 'center',
+        fontFamily: FontFamily.poppinsMedium
     },
     bottomBar: {
-        height: 93,
+        height: 85,
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
@@ -198,5 +216,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'flex-start',
     },
-    
+   
 });
+
+
