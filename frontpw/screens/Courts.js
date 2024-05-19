@@ -94,7 +94,7 @@ const Courts = () => {
       <View style={styles.bottomNav}>
         <TouchableOpacity
           style={styles.navButton}
-          onPress={() => navigation.navigate("HOME")}
+          onPress={() => navigation.navigate("Home")}
         >
           <Image
             style={styles.navIcon}

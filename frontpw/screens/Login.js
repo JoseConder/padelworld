@@ -61,10 +61,10 @@ export default function LoginScreen(props) {
       </View>
       <View style={styles.socialLoginContainer}>
         <TouchableOpacity onPress={() => console.log("Iniciar sesión con Google")}>
-          <FontAwesome name="google" size={65} />
+          <FontAwesome name="google" size={65} color={'red'}/>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => console.log("Iniciar sesión con Facebook")}>
-          <FontAwesome name="facebook" size={65} />
+          <FontAwesome name="facebook" size={65} color={'blue'} />
         </TouchableOpacity>
       </View>
     </View>
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   registerHighlight: {
-    color: '#d4de88',
+    color: '#879643',
     fontSize: 20,
     fontWeight: 'bold',
   },

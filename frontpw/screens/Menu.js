@@ -4,7 +4,7 @@ import { Image } from "expo-image";
 import { useNavigation } from "@react-navigation/native";
 import DeleteAccount from "../components/DeleteAccount";
 import { Color, FontSize, FontFamily, Border, Padding } from "../GlobalStyles";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 import CONFIRMACIN from "../components/CONFIRMACIN";
 
 const MEN = () => {
@@ -152,7 +152,7 @@ const MEN = () => {
 
         {/* Barra inferior */}
         <View style={styles.bottomNav}>
-        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate("HOME")}>
+        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate("Home")}>
           <Image
             style={styles.navIcon}
             source={require("../assets/home.png")}
