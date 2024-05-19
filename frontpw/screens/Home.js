@@ -85,25 +85,25 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#F3F3F3',
     },
     padelWorldBar: {
         height: 94,
-        backgroundColor: Color.colorYellowgreen_200,
+        backgroundColor: "#D2DE33",
         paddingHorizontal: 20,
         flexDirection: 'row',
         alignItems: 'flex-end',
         justifyContent: 'space-between',
-        paddingBottom: 5,
+        paddingBottom: 10,
 
 
     },
     padelWorldText: {
         color: '#000',
-        fontSize: 24,
-        fontWeight: 'bold',
+        fontSize: 28,
         textAlign: 'left',
-        fontFamily: FontFamily.poppinsMedium
+        fontFamily: FontFamily.poppinsMedium,
+    
     },
     userIcon: {
         width: 40,
@@ -145,16 +145,15 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     greeting: {
-        fontSize: 24,
-        fontWeight: 'bold',
+        fontSize: 28,
         color: '#000',
         fontFamily: FontFamily.poppinsMedium,
-        fontSize: FontSize.size_9xl
+
     },
     notificationContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 10,
+        marginTop: -5,
         marginLeft: 50,
     },
     bellFIcon: {
@@ -189,8 +188,7 @@ const styles = StyleSheet.create({
         width: '100%', // Ocupa el 100% del ancho del contenedor padre
     },
     searchButtonText: {
-        fontSize: 18,
-        fontWeight: 'bold',
+        fontSize: 16,
         color: '#000',
         textAlign: 'center',
         fontFamily: FontFamily.poppinsMedium
@@ -200,7 +198,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        backgroundColor: '#f0f0f0',
+        backgroundColor: '#F3F3F3',
         borderTopWidth: 1,
         borderColor: '#ddd',
         position: 'absolute',

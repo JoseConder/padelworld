@@ -14,8 +14,10 @@ import Profile from './screens/Profile';
 import Notifications from './screens/Notifications';
 import SavedCards from './screens/SavedCards';
 import Settings from './screens/Settings';
-import CONFIRMACIN from "./components/CONFIRMACIN";
+import Courts from './screens/Courts';
 import DeleteAccount from "./components/DeleteAccount";
+import CONFIRMACIN from "./components/CONFIRMACIN";
+
 
 
 
@@ -66,6 +68,8 @@ export default function App() {
               <Stack.Screen name="SavedCards" component={SavedCards}
               options ={{headerShown: false}}/>
               <Stack.Screen name="Settings" component={Settings}
+              options ={{headerShown: false}}/>
+              <Stack.Screen name="Courts" component={Courts}
               options ={{headerShown: false}}/>
           </Stack.Navigator>
       );

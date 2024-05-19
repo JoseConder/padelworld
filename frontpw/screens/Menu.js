@@ -3,9 +3,9 @@ import { StyleSheet, View, Pressable, Text, Modal } from "react-native";
 import { Image } from "expo-image";
 import { useNavigation } from "@react-navigation/native";
 import DeleteAccount from "../components/DeleteAccount";
-import CONFIRMACIN from "../components/CONFIRMACIN";
 import { Color, FontSize, FontFamily, Border, Padding } from "../GlobalStyles";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import CONFIRMACIN from "../components/CONFIRMACIN";
 
 const MEN = () => {
   const [rectangle4Visible, setRectangle4Visible] = useState(false);
@@ -142,65 +142,29 @@ const MEN = () => {
         </Pressable>
 
         {/* Barra superior */}
-        <View style={[styles.rectangleView, styles.menChildPosition]} />
-        <Text style={[styles.men1, styles.men1Layout]}>Menú</Text>
-
-        
-        <Pressable
-          style={styles.iconexlineTwoToneleftSqua}
-          onPress={() => navigation.goBack()}
-        >
-          <View style={styles.left}>
-            <View style={styles.leftChild} />
-            <Image
-              style={styles.leftItem}
-              contentFit="cover"
-              source={require("../assets/vector-141.png")}
-            />
-          </View>
+        <View style={styles.header}>
+        <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
+            <Image source={require("../assets/vector-141.png")} style={styles.backIcon} />
         </Pressable>
-        
-
-
-        <Pressable
-          style={styles.iconexlineTwoToneleftSqua}
-          onPress={() => navigation.goBack()}
-        >
-          <View style={styles.left}>
-            <View style={styles.leftChild} />
-            <Image
-              style={styles.leftItem}
-              contentFit="cover"
-              source={require("../assets/vector-141.png")}
-            />
-          </View>
-        </Pressable>
+        <Text style={styles.title}>Canchas</Text>
+    </View>
 
 
         {/* Barra inferior */}
-        <View style={styles.menChild7} />
-        <Pressable
-          style={[styles.calendar, styles.homeLayout]}
-          onPress={() => navigation.navigate("Calendar")}
-        >
+        <View style={styles.bottomNav}>
+        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate("HOME")}>
           <Image
-            style={[styles.icon, styles.iconLayout1]}
-            contentFit="cover"
-            source={require("../assets/calendar.png")}
-          />
-        </Pressable>
-        <Pressable
-          style={[styles.home, styles.homeLayout]}
-          onPress={() => navigation.navigate("Home")}
-        >
-          <Image
-            style={[styles.icon, styles.iconLayout1]}
-            contentFit="cover"
+            style={styles.navIcon}
             source={require("../assets/home.png")}
           />
-        </Pressable>
-        {/* Linea de la barra inferior */}
-        <View style={[styles.menChild8, styles.lineViewBorder]} />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate("CALENDARIO")}>
+          <Image
+            style={styles.navIcon}
+            source={require("../assets/calendar.png")}
+          />
+        </TouchableOpacity>
+      </View>
       </View>
 
       {/* interacciones de los componentes */}
@@ -227,6 +191,58 @@ const MEN = () => {
 };
 
 const styles = StyleSheet.create({
+
+  header: {
+    height: 94,
+    backgroundColor: "#D2DE33", 
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 16,
+
+  },
+  backButton: {
+    width: 32,
+    height: 32,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+    borderWidth: 1.5,
+    borderColor: "#000000",
+    marginRight: 16,
+    bottom:-20
+  },
+  backIcon: {
+    width: 7,
+    height: 14,
+    tintColor: "#000000",
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "600",
+    color: "#000000",
+    bottom:-28,
+    fontFamily: FontFamily.poppinsMedium
+
+  },
+  bottomNav: {
+    height: 85,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: '#F3F3F3',
+    borderTopWidth: 1,
+    borderColor: '#DDD',
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+  },
+  navButton: {
+    alignItems: 'center',
+  },
+  navIcon: {
+    width: 30,
+    height: 30,
+  },
   menChildPosition: {
     width: 390,
     left: 0,
@@ -462,7 +478,7 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   button: {
-    top: 682,
+    top: 640,
     left: 20,
     borderRadius: Border.br_5xs,
     backgroundColor: Color.colorYellowgreen_100,

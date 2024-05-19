@@ -6,7 +6,7 @@ import { Color, FontSize, FontFamily, Border, Padding } from "../GlobalStyles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 
-const NOTIFICACIONES = () => {
+const Courts = () => {
   const navigation = useNavigation();
 
   return (
@@ -16,33 +16,10 @@ const NOTIFICACIONES = () => {
         <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
             <Image source={require("../assets/vector-141.png")} style={styles.backIcon} />
         </Pressable>
-        <Text style={styles.title}>Notificaciones</Text>
+        <Text style={styles.title}>Canchas</Text>
     </View>
 
-      {/* Notifications List */}
-      {[
-        { message: '¡Tu reservación ha sido cancelada!', details: 'Tu reservación para el día 20/04/2024...', key: 1 },
-        { message: 'Tu pago no ha sido procesado', details: 'Tu pago del día 19/04/2024 no ha sido...', key: 2 },
-        { message: '¡Tu reservación ha sido cancelada!', details: 'Tu reservación para el día 25/05/2024...', key: 3 },
-        { message: 'Tu pago no ha sido procesado', details: 'Tu pago del día 17/04/2024 no ha sido...', key: 4 },
-      ].map((notification) => (
-        <View key={notification.key} style={styles.notificationContainer}>
-          <Image
-            style={styles.bellIcon}
-            source={require("../assets/bellf.png")}
-          />
-          <View style={styles.textContainer}>
-            <Text style={styles.notificationTitle}>{notification.message}</Text>
-            <Text
-              style={styles.notificationDetails}
-              numberOfLines={1}
-              ellipsizeMode="tail"
-            >
-              {notification.details}
-            </Text>
-          </View>
-        </View>
-      ))}
+
 
       {/* Bottom Navigation */}
       <View style={styles.bottomNav}>
@@ -159,4 +136,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NOTIFICACIONES;
+export default Courts;

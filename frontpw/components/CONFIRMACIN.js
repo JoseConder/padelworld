@@ -3,8 +3,10 @@ import { View, StyleSheet, Pressable, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Color, Border, FontFamily, FontSize } from "../GlobalStyles";
 
+
 const CONFIRMACIN = ({ onClose }) => {
   const navigation = useNavigation();
+
 
   const handleYes = () => {
     onClose(); // Cierra el componente inmediatamente
@@ -13,9 +15,11 @@ const CONFIRMACIN = ({ onClose }) => {
     }, 0); // Navega inmediatamente después
   };
 
+
   const handleClose = () => {
     onClose();
   };
+
 
   return (
     <View style={styles.confirmacion}>
@@ -27,6 +31,7 @@ const CONFIRMACIN = ({ onClose }) => {
         <Text style={[styles.s, styles.sTypo]}>Sí</Text>
       </Pressable>
 
+
       <Pressable
         style={[styles.rectanglePressable, styles.noButton]}
         onPress={handleClose}
@@ -34,16 +39,18 @@ const CONFIRMACIN = ({ onClose }) => {
         <Text style={[styles.no, styles.sTypo]}>No</Text>
       </Pressable>
 
+
       <Text style={styles.deseasCerrarTuSesion}>¿Deseas cerrar tu sesión?</Text>
     </View>
   );
 };
 
+
 const styles = StyleSheet.create({
   confirmacion: {
     width: 280,
     height: 140,
-    maxWidth: "100%", 
+    maxWidth: "100%",
     maxHeight: "100%",
     justifyContent: "center",
     alignItems: "center",
@@ -97,5 +104,6 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_base,
   },
 });
+
 
 export default CONFIRMACIN;
