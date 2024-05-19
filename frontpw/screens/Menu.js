@@ -571,7 +571,7 @@ const styles = StyleSheet.create({
     height: 844,
     overflow: "hidden",
     width: "100%",
-    backgroundColor: Color.colorWhitesmoke_200,
+    backgroundColor: '#F3F3F3',
   },
 });
 
