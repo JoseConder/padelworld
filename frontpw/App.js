@@ -5,7 +5,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'; // Corrected import
 import { useFonts } from "expo-font";
 
-
 import Login from './screens/Login';
 import Home from './screens/Home';
 import Register from './screens/Register';
@@ -15,6 +14,7 @@ import Notifications from './screens/Notifications';
 import SavedCards from './screens/SavedCards';
 import Settings from './screens/Settings';
 import Courts from './screens/Courts';
+import Schedule from './screens/Schedule';
 import DeleteAccount from "./components/DeleteAccount";
 import CONFIRMACIN from "./components/CONFIRMACIN";
 
@@ -52,7 +52,9 @@ export default function App() {
   function MyStack() {
       return(
           <Stack.Navigator screenOptions={{
-            statusBarStyle: 'dark-content'}}>
+            statusBarStyle: 'dark-content',
+            animationEnabled: false}
+            }>
               <Stack.Screen name="Login" component={Login} 
               options ={{headerShown: false}}/>
               <Stack.Screen name="Home" component={Home} 
@@ -70,6 +72,8 @@ export default function App() {
               <Stack.Screen name="Settings" component={Settings}
               options ={{headerShown: false}}/>
               <Stack.Screen name="Courts" component={Courts}
+              options ={{headerShown: false}}/>
+              <Stack.Screen name="Schedule" component={Schedule}
               options ={{headerShown: false}}/>
           </Stack.Navigator>
       );

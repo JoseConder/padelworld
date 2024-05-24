@@ -1,6 +1,12 @@
 import React from 'react';
 import { View, Text, Image, Pressable, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Color, FontSize, FontFamily, Border, Padding } from "../GlobalStyles";
+import { FontAwesome } from '@expo/vector-icons'; // Importa FontAwesome desde expo-vector-icons
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+// import { faUser as faUserRegular } from '@fortawesome/free-regular-svg-icons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import { faCircleUser } from '@fortawesome/free-regular-svg-icons';
+
 
 
 export default function HomeScreen({ navigation }) {
@@ -11,10 +17,7 @@ export default function HomeScreen({ navigation }) {
                 <Text style={styles.padelWorldText}>Padelworld</Text>
 
                 <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
-                    <Image
-                        style={styles.userIcon}
-                        source={require("../assets/usercircle.png")}
-                    />
+                    <AntDesign name="user" size={28} style={styles.userIcon} />
                 </TouchableOpacity>
             </View>
 
@@ -29,13 +32,11 @@ export default function HomeScreen({ navigation }) {
                                 style={styles.userCircleIcon}
                                 source={require("../assets/usercircle.png")}
                             />
+                            {/* <FontAwesomeIcon icon={faCircleUser} size={50}  /> */}
                             <Text style={styles.greeting}>¡Hola, Sofía!</Text>
                         </View>
                         <View style={styles.notificationContainer}>
-                            <Image
-                                style={styles.bellFIcon}
-                                source={require("../assets/bellf.png")}
-                            />
+                            <FontAwesome name={'bell'} style={styles.bellFIcon} />
                             <Text style={styles.notifications}>4 notificaciones</Text>
                         </View>
                     </View>
@@ -70,7 +71,7 @@ export default function HomeScreen({ navigation }) {
                         source={require("../assets/home.png")}
                     />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Calendar')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Schedule')}>
                     <Image
                         style={styles.bottomIcon}
                         source={require("../assets/calendar.png")}
@@ -94,20 +95,18 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'flex-end',
         justifyContent: 'space-between',
-        paddingBottom: 10,
+        paddingTop:50
 
 
     },
     padelWorldText: {
-        color: '#000',
         fontSize: 28,
         textAlign: 'left',
         fontFamily: FontFamily.poppinsMedium,
     
     },
     userIcon: {
-        width: 40,
-        height: 40,
+       paddingBottom:10
       
     },
     scrollContent: {
@@ -133,6 +132,7 @@ const styles = StyleSheet.create({
       borderTopColor: '#CFCFCF',
       borderBottomWidth: 1,
       borderBottomColor: '#CFCFCF',
+      
   },
  
     headerContainer: {
@@ -140,37 +140,39 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     userCircleIcon: {
-        width: 40,
-        height: 40,
+        width: 70,
+        height: 70,
         marginRight: 10,
+        marginLeft:-20
     },
     greeting: {
         fontSize: 28,
-        color: '#000',
         fontFamily: FontFamily.poppinsMedium,
 
     },
     notificationContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: -5,
-        marginLeft: 50,
+        marginTop: -25,
+        marginLeft: 60,
     },
     bellFIcon: {
-        width: 20,
-        height: 20,
+        fontSize:18,
         marginRight: 5
     },
     notifications: {
         fontSize: 16,
         color: '#000',
-        fontFamily: FontFamily.poppinsRegular
+        fontFamily: FontFamily.poppinsRegular,
+        marginTop:5
        
     },
     reservationIcon: {
-        width: 40,
-        height: 40,
+        width: 70,
+        height: 70,
         marginRight: 10,
+        marginLeft:-20,
+        marginTop:20
     },
     reservationText: {
         fontSize: 16,
