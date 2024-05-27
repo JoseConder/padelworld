@@ -32,7 +32,7 @@ const Menu = () => {
       {/* Lista */}
       {[
         { title: 'Notificaciones', icon: 'bell', onPress: () => navigation.navigate("Notifications") },
-        { title: 'Mis datos de Pago', icon: 'credit-card', onPress: () => navigation.navigate("PaymentData") },
+        { title: 'Mis datos de Pago', icon: 'credit-card', onPress: () => navigation.navigate("SavedCards") },
         { title: 'Ajustes', icon: 'gear', onPress: () => navigation.navigate("Settings") },
         { title: 'Eliminar Cuenta', icon: 'times', onPress: () => navigation.navigate("DeleteAccount") },
       ].map((notification, index) => (
@@ -55,7 +55,7 @@ const Menu = () => {
         <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate("Home")}>
           <Image style={styles.navIcon} source={require("../assets/home.png")} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate("Calendario")}>
+        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate("Schedule")}>
           <Image style={styles.navIcon} source={require("../assets/calendar.png")} />
         </TouchableOpacity>
       </View>
